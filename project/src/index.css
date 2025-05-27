@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+:root[class~="dark"] {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-white text-neutral-900 dark:bg-neutral-900 dark:text-white;
+}
+
+/* Navigation */
+.nav-link {
+  @apply px-3 py-2 text-sm font-semibold transition-colors;
+}
+
+.nav-link-active {
+  @apply text-primary-600 dark:text-primary-400;
+}
+
+.nav-link-default {
+  @apply text-neutral-600 hover:text-primary-600 dark:text-neutral-300 dark:hover:text-primary-400;
+}
+
+/* Auth Forms */
+.auth-input {
+  @apply block w-full px-4 py-2 border border-neutral-300 dark:border-neutral-700 rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white;
+}
+
+/* Button */
+.auth-button {
+  @apply w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500;
+}
+
+.auth-button:focus-visible {
+  @apply ring-2 ring-primary-500;
+}
+
+/* Links */
+.auth-link {
+  @apply text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-medium;
+}
+
+.auth-link:focus-visible {
+  @apply outline-none ring-2 ring-primary-500;
+}
+
+/* Theme transition */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Accessibility: Add focus-visible styles for better keyboard navigation */
+:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+/* Additional global styles for form elements */
+input, button, textarea, select {
+  @apply focus:outline-none;
+}
+
+/* Ensure a consistent layout for body */
+body {
+  font-family: 'Inter', sans-serif; /* Adjust font family for better readability */
+}
